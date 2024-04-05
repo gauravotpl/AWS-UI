@@ -5,9 +5,68 @@
   <title>AWSUI</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+ 
+  <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="./assets/css/default.css" rel="stylesheet" />
+  <link href="./assets/css/megamenu.css" rel="stylesheet" />
+  <link href="./assets/css/base.css" rel="stylesheet" />
+  <link href="./assets/css/site.css" rel="stylesheet" />
+  <link href="./assets/css/font-awesome.min.css" rel="stylesheet" />
+
+  <script src="./assets/js/jquery.min.js"></script>
+  <script src="./assets/js/bootstrap.min.js"></script>
+  <script src="./assets/js/Admin.js"></script>
+  <style type="text/css">
+    body {
+        font-family: Arial;
+        font-size: 10pt;
+    }
+</style>
 </head>
-<body>
+<body class="html front not-logged-in two-sidebars page-node i18n-en">
   <app-root></app-root>
+
+
+  <script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery('.tb-megamenu').each(function () {
+            jQuery(this).find('.dropdown-toggle').focus(function () {
+                jQuery('.hover1').parent().find('.mega-dropdown-menu').hide();
+                jQuery('.hover1').removeClass("hover1");
+                jQuery(this).attr('class', 'hover1');
+                jQuery('.hover1').parent().find('.mega-dropdown-menu').show();
+            });
+            jQuery(this).find('.dropdown-toggle').hover(function () {
+                jQuery('.hover1').parent().find('.mega-dropdown-menu').hide();
+                jQuery('.hover1').removeClass("hover1");
+                jQuery(this).attr('class', 'hover1');
+                jQuery('.hover1').parent().find('.mega-dropdown-menu').show();
+            });
+            jQuery(this).find('.mega > .mega-dropdown-menu').mouseleave(function () {
+                jQuery('.hover1').parent().find('.mega-dropdown-menu').hide();
+                jQuery('.hover1').attr('class', 'dropdown-toggle');
+                jQuery('.hover1').removeClass("hover1");
+            });
+            jQuery(this).find('.dropdown').mouseleave(function () {
+                jQuery('.hover1').parent().find('.mega-dropdown-menu').hide();
+                jQuery('.hover1').attr('class', 'dropdown-toggle');
+                jQuery('.hover1').removeClass("hover1");
+
+            });
+        });
+    });
+</script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery('div#quicktabs-tabpage-home_content-0 .more-link a').attr('title', "View All What's New");
+        jQuery('.scroll-table1 caption').css('display', 'none');
+        jQuery('table').each(function (index) {
+            var test = jQuery(this).find('caption').text();
+            jQuery(this).parent().prepend("<div class='tableP'>" + test + "</div>");
+        });
+        jQuery('.tb-megamenu-column-inner ul li a span').css('display', 'none');
+        jQuery('li.cmf_lan ul li a').removeAttr("target");
+    });
+</script>
 </body>
 </html>

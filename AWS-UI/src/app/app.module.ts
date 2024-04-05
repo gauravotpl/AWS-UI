@@ -8,6 +8,10 @@ import { AuthFooterComponent } from './Auth/auth-footer/auth-footer.component';
 import { AuthMenuComponent } from './Auth/auth-menu/auth-menu.component';
 import { AuthLayoutComponent } from './Auth/auth-layout/auth-layout.component';
 import { AuthLoginComponent } from './Auth/auth-login/auth-login.component';
+import { DashboardComponent } from './UserModule/JE/dashboard/dashboard.component';
+import { HeaderComponent } from './UserModule/JE/Layout/header/header.component';
+import { JeFooterComponent } from './UserModule/JE/Layout/je-footer/je-footer.component';
+import { JeLayoutComponent } from './UserModule/JE/Layout/je-layout/je-layout.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { AuthLoginComponent } from './Auth/auth-login/auth-login.component';
     AuthFooterComponent,
     AuthMenuComponent,
     AuthLayoutComponent,
-    AuthLoginComponent
+    AuthLoginComponent,
+    DashboardComponent,
+    HeaderComponent,
+    JeFooterComponent,
+    JeLayoutComponent
   ],
   imports: [
     BrowserModule,
